@@ -1,5 +1,6 @@
 package com.SiranMotel.Motel.dtos;
 
+import com.SiranMotel.Motel.type.RoomStatus;
 import lombok.*;
 
 @Data
@@ -12,5 +13,5 @@ public class RoomDTO {
     private String number;
     private String type;
     private Integer price;
-    private Boolean status;
+    private RoomStatus roomStatus;
 }

@@ -15,6 +15,6 @@ public class BookingDTO {
     private LocalDate checkOut;
     private Integer totalPrice;
 
-    private Long customerId;
-    private Long roomId;
+    private CustomerDTO customerDTO;
+    private RoomDTO roomDTO;
 }

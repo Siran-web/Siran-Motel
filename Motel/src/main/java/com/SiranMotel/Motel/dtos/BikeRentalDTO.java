@@ -15,6 +15,6 @@ public class BikeRentalDTO {
     private LocalDateTime returnDate;
     private Integer totalPrice;
 
-    private Long customerId;
-    private Long bikeId;
+    private CustomerDTO customerDTO;
+    private BikeDTO bikeDTO;
 }

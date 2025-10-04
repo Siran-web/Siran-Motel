@@ -1,5 +1,6 @@
 package com.SiranMotel.Motel.dtos;
 
+import com.SiranMotel.Motel.type.Status;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -14,8 +15,8 @@ public class FoodOrderDTO {
     private Long id;
     private LocalDateTime orderDate;
     private Integer totalPrice;
-    private Boolean status; // Enum: PLACED, COOKING, DELIVERED
+    private Status status;
 
-    private Long customerId;
-    private List<OrderItemDTO> items;
+    private CustomerDTO customerDTO;
+    private List<OrderItemDTO>   orderItemDTOList;
 }

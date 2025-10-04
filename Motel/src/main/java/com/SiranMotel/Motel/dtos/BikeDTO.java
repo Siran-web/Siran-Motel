@@ -1,5 +1,6 @@
 package com.SiranMotel.Motel.dtos;
 
+import com.SiranMotel.Motel.type.BikeStatus;
 import lombok.*;
 
 @Data
@@ -11,5 +12,5 @@ public class BikeDTO {
     private Long id;
     private String model;
     private Integer pricePerHour;
-    private Boolean status;
+    private BikeStatus bikeStatus;
 }
