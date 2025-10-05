@@ -15,7 +15,7 @@ public class BookingEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)   // Auto increment primary key
-    private Long id;
+    private Long bookingId;
 
     @Column(nullable = false)
     private LocalDate checkIn;

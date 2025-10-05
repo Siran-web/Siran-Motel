@@ -15,7 +15,7 @@ public class CustomerEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long customerId;
 
     @Column(nullable = false)
     private String name;
@@ -30,4 +30,6 @@ public class CustomerEntity {
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<BookingEntity> bookings;
 
+    @OneToMany(mappedBy = "bikeRental" , cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<BikeEntity> bikes;
 }

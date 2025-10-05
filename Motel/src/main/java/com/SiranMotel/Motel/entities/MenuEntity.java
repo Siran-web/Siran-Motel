@@ -1,33 +1,28 @@
 package com.SiranMotel.Motel.entities;
 
-import com.SiranMotel.Motel.type.RoomStatus;
-import com.SiranMotel.Motel.type.RoomType;
+import com.SiranMotel.Motel.type.FoodType;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Entity
+@Table(name = "menu")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "room")
-public class RoomEntity {
+public class MenuEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer roomId;
+    private Long id;
 
-    @Column(nullable = false, unique = true)
-    private String roomNumber;
-
-    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private RoomType roomType;
+    private String name;
 
     @Column(nullable = false)
     private Integer price;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private RoomStatus roomStatus;
+    private FoodType foodType;
 }
