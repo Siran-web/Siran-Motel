@@ -26,6 +26,9 @@ public class CustomerEntity {
     @Column(nullable = false, length = 10)
     private String phone;
 
+    @Column(nullable = false, length = 100)
+    private String address;
+
     // Relations
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<BookingEntity> bookings;

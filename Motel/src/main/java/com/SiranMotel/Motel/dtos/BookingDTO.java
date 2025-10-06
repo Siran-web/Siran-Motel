@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class BookingDTO {
-    private Long id;
+    private Long bookingId;
     private LocalDate checkIn;
     private LocalDate checkOut;
     private Integer totalPrice;

@@ -10,10 +10,11 @@ import java.util.List;
 @Getter
 @Setter
 public class CustomerDTO {
-    private Long id;
+    private Long customerId;
     private String name;
     private String email;
     private String phone;
+    private String address;
 
     private List<BookingDTO> bookings;
     private List<BikeRentalDTO> bikeRentals;
