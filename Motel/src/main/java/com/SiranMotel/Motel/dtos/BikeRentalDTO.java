@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class BikeRentalDTO {
-    private Long id;
+    private Long bikeRentalId;
     private LocalDateTime rentalDate;
     private LocalDateTime returnDate;
     private Integer totalPrice;

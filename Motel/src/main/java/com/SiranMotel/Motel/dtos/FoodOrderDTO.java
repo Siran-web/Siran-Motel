@@ -12,7 +12,7 @@ import java.util.List;
 @Getter
 @Setter
 public class FoodOrderDTO {
-    private Long id;
+    private Long foodOrderId;
     private LocalDateTime orderDate;
     private Integer totalPrice;
     private Status status;

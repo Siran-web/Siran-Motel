@@ -18,7 +18,7 @@ public class FoodOrderEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long foodOrderId;
 
     private LocalDateTime orderDate;
 

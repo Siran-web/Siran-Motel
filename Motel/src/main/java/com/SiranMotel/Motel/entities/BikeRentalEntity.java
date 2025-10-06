@@ -17,7 +17,7 @@ public class BikeRentalEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer bikeRentalId;
+    private Long bikeRentalId;
 
     private LocalDateTime rentalDate;
     private LocalDateTime returnDate;
