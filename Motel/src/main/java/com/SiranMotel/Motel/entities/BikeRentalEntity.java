@@ -26,8 +26,10 @@ public class BikeRentalEntity {
     private Integer totalPrice;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private CustomerEntity customerEntity;
+    @JoinColumn(name = "customer_id", nullable = false)
+    private CustomerEntity customer;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private BikeEntity bikeEntity;
+    @JoinColumn(name = "bike_id", nullable = false)
+    private BikeEntity bike;
 }

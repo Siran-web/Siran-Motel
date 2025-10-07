@@ -3,6 +3,7 @@ package com.SiranMotel.Motel.dtos;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor

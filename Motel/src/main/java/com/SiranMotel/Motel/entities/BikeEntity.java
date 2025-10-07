@@ -29,6 +29,6 @@ public class BikeEntity {
     private BikeStatus bikeStatus;
 
     @OneToMany(mappedBy = "bike", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<BikeRentalEntity> rentals = new ArrayList<>();
+    private List<BikeRentalEntity> bikeRentals = new ArrayList<>();
 
 }
