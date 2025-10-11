@@ -35,6 +35,7 @@ public class RoomService {
 
     public RoomDTO createRoom(RoomDTO roomDTO) {
         RoomEntity roomEntity = RoomModelMapper.toEntity(roomDTO);
+        roomEntity.setRoomId(null);
         roomRepository.save(roomEntity);
         return RoomModelMapper.toDTO(roomEntity);
     }
