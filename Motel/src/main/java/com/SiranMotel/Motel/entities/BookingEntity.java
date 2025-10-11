@@ -32,6 +32,6 @@ public class BookingEntity {
     private CustomerEntity customer;
 
     @ManyToOne
-    @JoinColumn(name = "room_id", nullable = false)
+    @JoinColumn(name = "room_id")
     private RoomEntity room;
 }

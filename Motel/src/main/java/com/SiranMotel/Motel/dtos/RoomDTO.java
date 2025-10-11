@@ -10,7 +10,7 @@ import lombok.*;
 @Getter
 @Setter
 public class RoomDTO {
-    private Long id;
+    private Long roomId;
     private String roomNumber;
     private RoomType roomType;
     private Integer price;
