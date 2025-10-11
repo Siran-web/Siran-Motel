@@ -4,11 +4,12 @@ import com.SiranMotel.Motel.dtos.MenuDTO;
 import com.SiranMotel.Motel.entities.MenuEntity;
 import com.SiranMotel.Motel.modelMappers.MenuModelMapper;
 import com.SiranMotel.Motel.repositories.MenuRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
+@Service
 public class MenuService {
 
     private final MenuRepository menuRepository;
@@ -19,6 +20,7 @@ public class MenuService {
 
     public MenuDTO createMenu(MenuDTO menuDTO) {
         MenuEntity menuEntity = MenuModelMapper.toEntity(menuDTO);
+        menuEntity.setId(null);
         MenuEntity saveEntity = menuRepository.save(menuEntity);
         return MenuModelMapper.toDTO(saveEntity);
     }
