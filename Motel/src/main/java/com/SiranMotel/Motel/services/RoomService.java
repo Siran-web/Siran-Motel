@@ -2,6 +2,7 @@ package com.SiranMotel.Motel.services;
 
 import com.SiranMotel.Motel.dtos.RoomDTO;
 import com.SiranMotel.Motel.entities.RoomEntity;
+import com.SiranMotel.Motel.exception.ResourceNotFoundException;
 import com.SiranMotel.Motel.modelMappers.RoomModelMapper;
 import com.SiranMotel.Motel.repositories.RoomRepository;
 import org.springframework.stereotype.Service;
@@ -38,6 +39,25 @@ public class RoomService {
         roomEntity.setRoomId(null);
         roomRepository.save(roomEntity);
         return RoomModelMapper.toDTO(roomEntity);
+    }
+
+    public void isExistRoomWithId(Long roomId){
+        boolean exists = roomRepository.existsById(roomId);
+        if(!exists) throw new ResourceNotFoundException("Room Not Found with id: " + roomId);
+    }
+
+    public Boolean deleteRoomById(Long roomId){
+        isExistRoomWithId(roomId);
+        roomRepository.deleteById(roomId);
+        return true;
+    }
+
+    public RoomDTO updateRoom(Long roomId, RoomDTO roomDTO ) {
+        isExistRoomWithId(roomId);
+        RoomEntity roomEntity = RoomModelMapper.toEntity(roomDTO);
+        roomEntity.setRoomId(roomId);
+        RoomEntity updatedEntity = roomRepository.save(roomEntity);
+        return RoomModelMapper.toDTO(updatedEntity);
     }
 
  }
