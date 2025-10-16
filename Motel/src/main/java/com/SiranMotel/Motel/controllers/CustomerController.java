@@ -35,5 +35,18 @@ public class CustomerController {
         return ResponseEntity.ok(customerDTO);
     }
 
+    @DeleteMapping(path = "/{customerId}")
+    public ResponseEntity<Boolean> deleteCustomer(@PathVariable Long customerId) {
+        Boolean gotDeleted = customerService.deleteCustomer(customerId);
+        if(gotDeleted)
+            return ResponseEntity.ok(true);
+        return ResponseEntity.notFound().build();
+    }
+
+    @PutMapping(path = "/{customerId}")
+    public ResponseEntity<CustomerDTO>  updateCustomer(@PathVariable Long customerId, @RequestBody CustomerDTO customerDTO) {
+        CustomerDTO updatedCustomer = customerService.updateCustomer(customerId, customerDTO);
+        return ResponseEntity.ok(updatedCustomer);
+    }
 
 }
