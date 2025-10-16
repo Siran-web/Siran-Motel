@@ -34,4 +34,18 @@ public class MenuController {
         List<MenuDTO> menuDTOs = menuService.ShowAllMenus();
         return ResponseEntity.ok().body(menuDTOs);
     }
+
+    @DeleteMapping(path = "/{menuId}")
+    public ResponseEntity<Boolean> deleteMenuById(@PathVariable long menuId) {
+        Boolean gotDeleted = menuService.deleteMenu(menuId);
+        if (gotDeleted)
+            return ResponseEntity.ok(true);
+        return ResponseEntity.notFound().build();
+    }
+
+    @PutMapping(path = "/{menuId}")
+    public ResponseEntity<MenuDTO> updateMenu(@PathVariable long menuId, @RequestBody MenuDTO inputMenu) {
+        MenuDTO updateMenu = menuService.updateMenu(menuId , inputMenu);
+        return ResponseEntity.ok(updateMenu);
+    }
 }

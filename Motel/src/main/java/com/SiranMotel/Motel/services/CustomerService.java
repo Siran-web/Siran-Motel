@@ -55,6 +55,7 @@ public class CustomerService {
     public CustomerDTO updateCustomer(Long customerId, CustomerDTO customerDTO) {
         isExistByCustomerId(customerId);
         CustomerEntity entity = CustomerModelMapper.toEntity(customerDTO);
+        entity.setCustomerId(customerId);
         CustomerEntity savedEntity = customerRepository.save(entity);
         return CustomerModelMapper.toDTO(savedEntity);
     }
