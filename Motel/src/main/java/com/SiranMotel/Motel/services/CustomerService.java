@@ -35,15 +35,16 @@ public class CustomerService {
         return customerDTOs;
     }
 
-    public CustomerDTO getCustomerById(Long customerId) {
-        CustomerEntity customer = customerRepository.findById(customerId).orElse(null);
-        assert customer != null;
-        return CustomerModelMapper.toDTO(customer);
-    }
-
     public void isExistByCustomerId(Long customerId) {
         boolean exists = customerRepository.existsById(customerId);
         if (!exists) throw new ResourceNotFoundException("Customer not found with Id:" + customerId);
+    }
+
+    public CustomerDTO getCustomerById(Long customerId) {
+        isExistByCustomerId(customerId);
+        CustomerEntity customer = customerRepository.findById(customerId).orElse(null);
+        assert customer != null;
+        return CustomerModelMapper.toDTO(customer);
     }
 
     public Boolean deleteCustomer(Long customerId) {

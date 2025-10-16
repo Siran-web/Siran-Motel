@@ -37,6 +37,7 @@ public class MenuService {
     }
 
     public MenuDTO ShowMenuById(Long id) {
+        isExistMenu(id);
         MenuEntity menuEntity = menuRepository.findById(id).orElse(null);
         assert menuEntity != null;
         return MenuModelMapper.toDTO(menuEntity);

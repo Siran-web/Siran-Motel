@@ -28,7 +28,13 @@ public class RoomService {
         return roomDTOs;
     }
 
+    public void isExistRoomWithId(Long roomId){
+        boolean exists = roomRepository.existsById(roomId);
+        if(!exists) throw new ResourceNotFoundException("Room Not Found with id: " + roomId);
+    }
+
     public RoomDTO getRoomById(Long roomId) {
+        isExistRoomWithId(roomId);
         RoomEntity roomEntity = roomRepository.findById(roomId).orElse(null);
         assert roomEntity != null;
         return RoomModelMapper.toDTO(roomEntity);
@@ -39,11 +45,6 @@ public class RoomService {
         roomEntity.setRoomId(null);
         roomRepository.save(roomEntity);
         return RoomModelMapper.toDTO(roomEntity);
-    }
-
-    public void isExistRoomWithId(Long roomId){
-        boolean exists = roomRepository.existsById(roomId);
-        if(!exists) throw new ResourceNotFoundException("Room Not Found with id: " + roomId);
     }
 
     public Boolean deleteRoomById(Long roomId){
