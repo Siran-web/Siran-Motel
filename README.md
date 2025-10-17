@@ -1,159 +1,63 @@
-SiranMotel Backend API
+# 🏨 SiranMotel Backend API
 
-🌟 Project Overview
+![Java](https://img.shields.io/badge/Java-17%2B-blue?logo=java&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.0-brightgreen?logo=springboot&logoColor=white)
+![Build](https://img.shields.io/badge/Build-Maven-orange?logo=apachemaven&logoColor=white)
+![Database](https://img.shields.io/badge/Database-PostgreSQL-blue?logo=postgresql)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![Status](https://img.shields.io/badge/Status-Active-success)
 
-This repository hosts the backend API for the SiranMotel Management System. It's a comprehensive, robust, and scalable application designed to manage all core operations of a motel, including room reservations, food and beverage orders, and bike rentals.
+---
 
-The API is built using Java and the Spring Boot framework, following a standard layered architecture to ensure separation of concerns, maintainability, and testability.
+## 🌟 Project Overview
 
-✨ Key Features
+**SiranMotel** is a powerful **Spring Boot backend API** for managing motel operations —  
+including **room bookings, food orders, bike rentals, and customer profiles**.  
 
-The system supports the following core business functionalities, driven by the respective domain entities:
+It follows a **clean layered architecture** ensuring **scalability**, **maintainability**, and **testability**.
 
-Room Management: Create, view, update, and manage room inventory and availability (RoomEntity).
+---
 
-Booking Management: Handle customer bookings, including check-in and check-out processes (BookingEntity).
+## ✨ Core Features
 
-Customer Profiles: Maintain a centralized database of all customers (CustomerEntity).
+| 🧩 Module | 💡 Description | 🧱 Entity |
+|:----------|:----------------|:----------|
+| 🏠 **Room Management** | Manage room inventory, status, and availability. | `RoomEntity` |
+| 📅 **Booking Management** | Handle bookings, check-ins, and check-outs. | `BookingEntity` |
+| 👤 **Customer Profiles** | Maintain detailed customer records. | `CustomerEntity` |
+| 🍽 **Menu & Orders** | Define menu items and process guest orders. | `MenuEntity`, `FoodOrderEntity`, `OrderItemEntity` |
+| 🚲 **Bike Rentals** | Manage and track rental bikes. | `BikeEntity`, `BikeRentalEntity` |
+| ⚙️ **Global Handling** | Centralized API responses and error handling. | `advices` package |
 
-Menu & Ordering: Define menu items and process food and beverage orders for guests (MenuEntity, FoodOrderEntity, OrderItemEntity).
+---
 
-Bike Rental Service: Manage a fleet of rental bikes and track active rentals (BikeEntity, BikeRentalEntity).
+## 🛠️ Technology Stack
 
-Global Handling: Consistent API responses and centralized exception handling across all endpoints (advices package).
+| Component | Technology |
+|------------|-------------|
+| **Language** | Java 17+ |
+| **Framework** | Spring Boot 3 |
+| **Build Tool** | Maven (or Gradle) |
+| **Database** | PostgreSQL / MySQL / H2 |
+| **Mapping Library** | MapStruct / Orika |
+| **Documentation** | Springdoc OpenAPI / Swagger UI |
 
-🛠 Technology Stack
+---
 
-Language: Java 17+
+## ⚙️ Getting Started
 
-Framework: Spring Boot 3
+### 🧩 Prerequisites
 
-Build Tool: Maven (or Gradle, depending on your setup)
+Ensure you have the following installed:
+- ☕ JDK 17 or later  
+- 🧱 Maven or Gradle  
+- 🗄 Database server (PostgreSQL/MySQL)  
 
-Database: (Specify your database, e.g., PostgreSQL, MySQL, H2)
+---
 
-Mapping: Model Mappers (likely MapStruct or Orika for modelMappers).
+### 🚀 Installation & Setup
 
-API Documentation: Springdoc / Swagger (Highly recommended for future implementation).
-
-⚙️ Getting Started
-
-Prerequisites
-
-To run this project locally, you will need:
-
-JDK 17 or later
-
-Maven (or Gradle)
-
-A running instance of your chosen database (e.g., Docker container or local server).
-
-Installation and Setup
-
-Clone the repository:
-
+#### 1️⃣ Clone the Repository
+```bash
 git clone [Your Repository URL]
 cd Motel
-
-
-Configure Database:
-
-Navigate to src/main/resources/application.properties (or application.yml).
-
-Update the database connection details:
-
-spring.datasource.url=jdbc:postgresql://localhost:5432/moteldb
-spring.datasource.username=user
-spring.datasource.password=password
-spring.jpa.hibernate.ddl-auto=update
-
-
-Note: If you have a separate schema or profile, mention it here.
-
-Build the Project:
-
-# Using Maven
-mvn clean install
-
-
-Run the Application:
-
-# Run from the command line
-java -jar target/Motel-0.0.1-SNAPSHOT.jar
-
-# Or run directly via Maven
-mvn spring-boot:run
-
-
-The API will be available at http://localhost:8080 (or your configured port).
-
-🧭 Project Architecture
-
-The project adheres to a Layered Architecture (often referred to as MVC/Service Layer in Spring context):
-
-controllers: Handles incoming HTTP requests and returns appropriate responses. It primarily uses DTOs for data communication.
-
-services: Contains the core business logic. It orchestrates complex operations and handles transactions.
-
-repositories: Interacts directly with the database via Spring Data JPA.
-
-entities: The persistence models that map directly to database tables.
-
-dtos: Data Transfer Objects used to transfer data between layers, ensuring data integrity and security.
-
-📝 API Endpoints (Example)
-
-Endpoint
-
-Method
-
-Description
-
-/api/v1/rooms
-
-GET
-
-Retrieve a list of all rooms.
-
-/api/v1/rooms/available
-
-GET
-
-Retrieve a list of currently available rooms.
-
-/api/v1/bookings
-
-POST
-
-Create a new room booking.
-
-/api/v1/menu
-
-GET
-
-Retrieve the current food and beverage menu.
-
-/api/v1/orders
-
-POST
-
-Place a new food order for a guest.
-
-/api/v1/bikes
-
-GET
-
-List all bikes available for rental.
-
-(Please replace these examples with your actual controller paths.)
-
-🤝 Contribution
-
-Contributions are welcome! Please feel free to open an issue for bug reports or feature requests, or submit a Pull Request.
-
-(You can add specific contribution guidelines here if needed.)
-
-📄 License
-
-This project is licensed under the [Choose your license, e.g., MIT License] - see the LICENSE.md file for details.﻿# Siran-Motel
-
