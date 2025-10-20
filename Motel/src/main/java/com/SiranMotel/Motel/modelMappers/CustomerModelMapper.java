@@ -3,6 +3,9 @@ package com.SiranMotel.Motel.modelMappers;
 import com.SiranMotel.Motel.dtos.CustomerDTO;
 import com.SiranMotel.Motel.entities.CustomerEntity;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class CustomerModelMapper {
 
     public static CustomerEntity toEntity(CustomerDTO dto) {
@@ -12,6 +15,7 @@ public class CustomerModelMapper {
     entity.setEmail(dto.getEmail());
     entity.setPhone(dto.getPhone());
     entity.setAddress(dto.getAddress());
+
     return entity;
 }
 
@@ -22,6 +26,17 @@ public class CustomerModelMapper {
         dto.setEmail(entity.getEmail());
         dto.setPhone(entity.getPhone());
         dto.setAddress(entity.getAddress());
+
+
+        if (entity.getBookings() != null) {
+            dto.setBookings(
+                    entity.getBookings().stream()
+                            .map(BookingModelMapper::toBookingCustomerDTO)
+                            .collect(Collectors.toList())
+            );
+        }
+
+
         return dto;
     }
 }

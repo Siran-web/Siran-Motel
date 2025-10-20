@@ -9,12 +9,11 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Getter
 @Setter
-public class BookingDTO {
+public class BookingCustomerDTO {
     private Long bookingId;
     private LocalDate checkIn;
     private LocalDate checkOut;
     private Integer totalPrice;
 
-    private Long customerId;
     private Long roomId;
 }

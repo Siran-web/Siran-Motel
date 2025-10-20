@@ -43,7 +43,12 @@ public class CustomerService {
     public CustomerDTO getCustomerById(Long customerId) {
         isExistByCustomerId(customerId);
         CustomerEntity customer = customerRepository.findById(customerId).orElse(null);
+
         assert customer != null;
+        if (customer.getBookings() != null) {
+            customer.getBookings().size();
+        }
+
         return CustomerModelMapper.toDTO(customer);
     }
 
@@ -59,6 +64,12 @@ public class CustomerService {
         entity.setCustomerId(customerId);
         CustomerEntity savedEntity = customerRepository.save(entity);
         return CustomerModelMapper.toDTO(savedEntity);
+    }
+
+    public CustomerDTO getCustomerByName(String customerName) {
+        CustomerEntity entity = customerRepository.findByNameCaseInsensitive(customerName);
+        assert entity != null;
+        return CustomerModelMapper.toDTO(entity);
     }
 
 

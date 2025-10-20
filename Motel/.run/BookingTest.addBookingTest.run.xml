@@ -1,0 +1,21 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="com.SiranMotel.Motel in Motel" type="JUnit" factoryName="JUnit" activateToolWindowBeforeRun="false" nameIsGenerated="true" printAsyncStackTraceForExceptions="false">
+    <module name="Motel" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.SiranMotel.Motel.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Java/jdk-24" />
+    <option name="PACKAGE_NAME" value="com.SiranMotel.Motel" />
+    <option name="MAIN_CLASS_NAME" value="" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="package" />
+    <option name="TEST_SEARCH_SCOPE">
+      <value defaultName="wholeProject" />
+    </option>
+    <method v="2" />
+  </configuration>
+</component>

@@ -4,12 +4,12 @@ import com.SiranMotel.Motel.type.FoodType;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
-@Table(name = "menu")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
+@Table(name = "menu")
 public class MenuEntity {
 
     @Id

@@ -43,10 +43,16 @@ public class CustomerController {
         return ResponseEntity.notFound().build();
     }
 
-    @PutMapping(path = "/{customerId}")
+    @PutMapping(path = "/id/{customerId}")
     public ResponseEntity<CustomerDTO>  updateCustomer(@PathVariable Long customerId, @RequestBody CustomerDTO customerDTO) {
         CustomerDTO updatedCustomer = customerService.updateCustomer(customerId, customerDTO);
         return ResponseEntity.ok(updatedCustomer);
+    }
+
+    @GetMapping(path = "/name/{name}")
+    public ResponseEntity<CustomerDTO> getCustomerByName(@PathVariable String name) {
+        CustomerDTO customerDTO = customerService.getCustomerByName(name);
+        return ResponseEntity.ok(customerDTO);
     }
 
 }
