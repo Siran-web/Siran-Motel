@@ -1,7 +1,5 @@
 package com.SiranMotel.Motel.entities;
 
-import com.SiranMotel.Motel.dtos.BikeDTO;
-import com.SiranMotel.Motel.dtos.CustomerDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,12 +10,12 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "bikeRental")
-public class BikeRentalEntity {
+@Table(name = "vehicleRental")
+public class VehicleRentalEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long bikeRentalId;
+    private Long vehicleRentalId;
 
     private LocalDateTime rentalDate;
     private LocalDateTime returnDate;
@@ -30,6 +28,6 @@ public class BikeRentalEntity {
     private CustomerEntity customer;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "bike_id", nullable = false)
-    private BikeEntity bike;
+    @JoinColumn(name = "vehicle_id", nullable = false)
+    private VehicleEntity vehicle;
 }

@@ -12,12 +12,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "bike")
-public class BikeEntity {
+@Table(name = "vehicle")
+public class VehicleEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long bikeId;
+    private Long vehicleId;
 
     private String model;
 
@@ -26,9 +26,9 @@ public class BikeEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private BikeStatus bikeStatus;
+    private BikeStatus vehicleStatus;
 
-    @OneToMany(mappedBy = "bike", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<BikeRentalEntity> bikeRentals = new ArrayList<>();
+    @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<VehicleRentalEntity> vehicleRentals = new ArrayList<>();
 
 }

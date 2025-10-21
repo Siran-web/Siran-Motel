@@ -34,7 +34,7 @@ public class CustomerEntity {
     private List<BookingEntity> bookings;
 
     @OneToMany(mappedBy = "customer" , cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<BikeRentalEntity> bikeRentals;
+    private List<VehicleRentalEntity> bikeRentals;
 
     @OneToMany(mappedBy = "customer" , cascade = CascadeType.ALL, orphanRemoval = true)
     private List<FoodOrderEntity> foodOrders;

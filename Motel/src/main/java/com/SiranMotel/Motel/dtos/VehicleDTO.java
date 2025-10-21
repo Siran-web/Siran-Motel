@@ -8,9 +8,9 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
-public class BikeDTO {
-    private Long id;
+public class VehicleDTO {
+    private Long vehicleId;
     private String model;
     private Integer pricePerHour;
-    private BikeStatus bikeStatus;
+    private BikeStatus vehicleStatus;
 }

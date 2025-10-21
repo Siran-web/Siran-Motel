@@ -17,6 +17,6 @@ public class CustomerDTO {
     private String address;
 
     private List<BookingCustomerDTO> bookings;
-    private List<BikeRentalDTO> bikeRentals;
+    private List<VehicleRentalDTO> bikeRentals;
     private List<FoodOrderDTO> foodOrders;
 }
