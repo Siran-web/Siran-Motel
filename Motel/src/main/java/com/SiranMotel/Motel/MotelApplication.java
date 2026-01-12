@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
         info = @Info(
                 title = "Siran's Motel",
                 version = "1.0",
-                description = "API documentation for managing students"
+                description = "API documentation for managing Hotel "
         )
 )
 

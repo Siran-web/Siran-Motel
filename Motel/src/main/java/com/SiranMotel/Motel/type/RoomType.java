@@ -1,8 +1,8 @@
 package com.SiranMotel.Motel.type;
 
 public enum RoomType {
-    Single,
-    Double,
-    Delux,
-    SuperDelux;
-}
+    STANDARD,
+    DELUXE,
+    SUPER_DELUXE,
+    PREMIUM;
+    }
